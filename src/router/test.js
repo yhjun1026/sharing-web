@@ -22,6 +22,7 @@ const AuthorityTest = () => import('@/views/AuthorityTest/AuthorityTest')
 const NewArticle = () => import('@/views/article/article-new')
 const ArticleList = () => import('@/views/article/article-list')
 const Cube1 = () => import('@/views/borrowandback/Cube')
+const ArticleDetail = () => import('@/views/article/article-detail')
 // 天气预报
 // const Weather = resolve => require(['@/views/Weather/Weather'], resolve)
 // 立方体
@@ -76,6 +77,11 @@ export default // 然后就是嵌套路由了，也就是登陆后的各个页�
       path: 'article-list',
       meta: {requireAuth: true},
       component: ArticleList
+    },
+    {
+      path: 'article-detail',
+      meta: {requireAuth: true},
+      component: ArticleDetail
     }
   ]
 }

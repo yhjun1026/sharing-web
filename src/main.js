@@ -18,12 +18,13 @@ Vue.use(ElementUI)
 import '../static/css/base.less'
 Vue.prototype.$axios = axios
 Vue.use(VueParticles)
-
+import btnAccess from 'comp/btn-access'
+import slotAccess from 'comp/slot-access'
 // Vue 的全局配置
 Vue.config.productionTip = false
 
 // 上线全局请求配置
-axios.defaults.baseURL = 'api/v1/'
+axios.defaults.baseURL = 'sharing/api/'
 
 // http request 拦截器
 axios.interceptors.request.use(
@@ -57,7 +58,8 @@ axios.interceptors.response.use(
     return Promise.reject(error.response.data) // 返回接口返回的错误信息
   }
 )
-
+Vue.component('qf-access', btnAccess)
+Vue.component('qf-slotaccess', slotAccess)
 new Vue({
   el: '#app',
   i18n,
